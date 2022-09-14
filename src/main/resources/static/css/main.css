@@ -1,0 +1,149 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+a{text-decoration: none;}
+
+ 
+
+header{
+    width: 100%;
+    height: 95px;
+    background-color: ivory;
+    position: relative; 
+}
+
+#logo{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100px;
+}
+
+
+
+
+#top_menu{
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    color: gray;
+}
+
+
+#top_menu a{color: gray;}
+
+/*검색 버튼*/
+#searchbarbutton  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 38px; 
+    background: url() no-repeat 13px -337px;  
+}
+
+.gnb_search {
+    width: 243px;
+    box-sizing: border-box;
+	  position: absolute;
+	  top: 15px;
+	  left: 300px;
+	  z-index: 0;
+    border : 2px groove #202020;
+    background-color: #202020;
+}
+.gnb_search fieldset {
+    position: relative;
+    padding-right: 38px; 
+    border : 1px solid #202020;
+	width: 200px;
+}
+.gnb_search input {
+    height: 38px;
+    padding: 0 10px;
+    border: 0;
+    font-size: 0.875em;
+    line-height: 1.5714;
+    color: #b2b2b2;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+nav{
+    position: absolute;
+    bottom: 10px;
+    left: 220px;
+    font-size: 16px;
+}
+
+nav li{
+    display: inline;
+    margin-left: 30px;
+}
+
+nav li a{color: gray;}
+
+#content li{
+    display: inline;
+    margin-left: 50px;
+}
+
+footer{
+    width: 100%;
+    height: 90px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+div.footer_block{
+	
+  display: inline-block;
+  padding: 10px;
+}
+
+#page{width: 820px; margin: 0px auto;}
+
+ li.headerClick{  
+ 	padding-left:2px;
+ 	padding-right:2px;
+ 	padding-bottom:9px;
+ }
+ li.headerClick:hover{  
+ 	padding-left:2px;
+ 	padding-right:2px;
+ 	padding-bottom:7px;
+	border-bottom: 3px solid red;
+ }
+ 
+ span.sgsg_logo{ 
+	font-size: 30px;
+	font-family: "궁서"; 
+	color: gray;
+	border-top : 3px solid gray;
+	padding-top : 5px; 
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none; 
+ }
+ p.text_box{
+			width:498px;
+			height:150px;
+			border:1px solid #000;
+			overflow-y:scroll;
+			text-align: left;
+			
+}
+
+    main.large{
+		overflow:hidden;
+		height:auto;
+		width:auto; 
+		object-fit: fill;
+    }
+    
+    img.intro{
+    	width:150%;
+    	margin-left: -25%;
+    }
+    

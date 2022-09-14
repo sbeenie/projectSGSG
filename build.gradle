@@ -1,0 +1,50 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+	//id 'war'
+	// 오라클클라우드 할때 추가
+}
+
+group = 'com.ici.projectSGSG'
+version = '0.0.1-SNAPSHOT'
+//apply plugin:'war'
+// 오라클클라우드 할때 추가
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+//build.gradle
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test' 
+	implementation 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	
+	//추가 후 Refresh
+	implementation 'javax.servlet:jstl'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'org.apache.commons:commons-lang3:3.0'
+	implementation 'commons-io:commons-io:2.5'
+	
+	//파일업로드 관련
+	implementation 'org.apache.commons:commons-lang3:3.0'
+	implementation 'commons-io:commons-io:2.5'
+	
+	//oracle클라우드 할때
+	//implementation 'com.oracle.database.security:oraclepki'
+	//implementation 'com.oracle.database.security:osdt_core'
+	//implementation 'com.oracle.database.security:osdt_cert'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+

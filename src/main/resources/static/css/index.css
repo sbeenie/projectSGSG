@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+table.banner{
+    text-align: center;
+	margin-left: auto;
+	  margin-right: auto; 
+}
+
+div.bannerbox{
+	position:relative;
+	margin : 15px;
+}
+
+div.bannerbox img{ 
+	box-shadow : 0px 0px 10px gray;
+ 	vertical-align : middle;
+}
+div.bannerbox img:hover{ 
+	box-shadow : 0px 0px 20px black;
+}
+img#main_img{
+	border-top: 1px solid gray;
+	
+}
+ 
+ 
+ div.imgtext {
+ 	position : absolute;  
+ 	font-size : 20px; 
+ 	font-weight: bold;
+ 	color : white;
+ 	top : 10%;
+ 	left : 5%;
+ 	text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+ 	transform : translate(0%,-50%);
+ 	z-index: 999;
+	pointer-events: none; 
+ } 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.ProductDao">
+	 
+
+
+	<!-- 상품 등록 -->
+	<insert id="product_Add" >
+		insert into PRODUCTTBL (P_ID,P_NAME,P_PRICE,P_DESC,P_STOCK,I_ID) VALUES (SGSG_SEQ_PRODUCT.nextval,#{param1},#{param2},#{param3},10,#{param4})
+	</insert>
+	
+	<!-- 상품 수정 -->
+	<update id="product_Update">
+		UPDATE PRODUCTTBL SET  P_ID=#{param1},
+							   P_NAME=#{param2},
+						       P_PRICE=#{param3}, 
+						  	   P_DESC=#{param4}
+						       
+						WHERE  P_ID=#{param1}
+	</update>
+	
+	<!-- 상품 삭제 -->
+	<delete id="product_Delete">
+		DELETE FROM  PRODUCTTBL WHERE P_ID=#{param1}
+	</delete>
+
+	
+		<!-- 상품 설명창 업데이트하기-->
+	<select id="product_Explain" resultType="com.ici.projectSGSG.dto.ProductDto">
+		SELECT * FROM PRODUCTTBL WHERE P_ID=#{param1}
+	</select>
+	
+	
+			<!-- 상품 관리창 업데이트하기-->
+	<select id="product_Manage" resultType="com.ici.projectSGSG.dto.ProductDto">
+		SELECT * FROM PRODUCTTBL WHERE P_ID=#{param1}
+	</select>
+	
+
+	<!-- 상품 이름으로 검색하기-->
+	<select id="product_NAME" resultType="com.ici.projectSGSG.dto.ProductDto">
+		SELECT * FROM PRODUCTTBL WHERE P_NAME like '%'||#{param1}||'%'
+	</select>
+	
+	<!-- 상품 이름으로 id 검색하기-->
+	<select id="product_FindId" resultType="int">
+		SELECT P_ID FROM PRODUCTTBL WHERE P_NAME = #{param1} and <![CDATA[ROWNUM = 1]]>  order by P_ID DESC
+	</select>
+	
+	
+	
+</mapper>
+	

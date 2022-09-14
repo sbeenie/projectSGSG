@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+.wishlistview {
+	width: 100%;
+    border: 1px solid #444444;
+    margin:auto;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+	}
+	
+table{
+	width:100%;
+	margin-left:auto; 
+    margin-right:auto;
+    margin-buttom:10px;
+    background-color: #fffff0;
+    border-color: white;
+    
+}
+
+
+img.wishImg{
+	width: 200px;
+}
+	
+.buy-body{
+	margin: auto; 
+}
+
+tr, td {
+    border: 1px solid white;
+    text-align: center;
+    
+  }
+  
+td{
+	width: 150px;
+}
+
+.first{
+	border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.fifth{
+	border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+#delete-btn{
+	position: relative;
+	width:30%;
+	height:10%;
+	border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+	border: 1px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+#delete-btn:hover{
+            color:white;
+            background-color: skyblue;
+        }
+
+.buy{
+	text-align: center;
+	margin-top:15px;
+}
+
+.buybtn{
+	position: relative;
+	width: 150px;
+	height: 150px;
+	border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+	border: 1px solid skyblue;
+    background-color: rgba(0,0,0,0);
+    color: skyblue;
+    padding: 5px;
+}
+
+
+.buybtn:hover{
+            color:white;
+            background-color: skyblue;
+        }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.ProductEtcDao">
+
+	<select id="searchname" resultType="com.ici.projectSGSG.dto.ProductDto">
+		SELECT P_ID as pId , P_NAME as pName, P_PRICE as pPrice, P_DESC as pDesc, p_stock as pStock , I_ID as iId FROM producttbl WHERE P_NAME like '%' || #{param1} || '%'
+	</select>
+	
+	<select id="getRandProduct" resultType ="com.ici.projectSGSG.dto.ProductDto"> 
+			SELECT
+			*
+		FROM
+			(select * from producttbl order by DBMS_RANDOM.RANDOM)
+        WHERE
+			<![CDATA[ROWNUM <= 4]]> 
+	</select>
+	 
+	<select id="getCustomizedProduct" resultType ="com.ici.projectSGSG.dto.ProductDto">
+		SELECT
+			 distinct(p.P_ID) as pId , p.P_NAME as pName, p.P_PRICE as pPrice, p.P_DESC as pDesc, p.p_stock as pStock ,p.I_ID as iId
+		FROM
+			producttbl p 
+		INNER JOIN producttagtbl t
+		ON 
+			p.p_id = t.p_id 
+        WHERE
+            	t.p_id in (select distinct(p_id) from producttagtbl where t_id = #{param1} or t_id = 10) 
+            AND
+            	t.p_id in (select distinct(p_id) from producttagtbl where t_id = #{param2} or t_id = 11)
+            AND
+            	t.p_id in (select distinct(p_id) from producttagtbl where t_id = #{param3} or t_id = 12)
+        ORDER BY p.p_price DESC
+	</select>
+	
+	
+	<insert id="addTag" >
+		insert into PRODUCTTAGTBL (P_ID,T_ID) VALUES (#{param1},#{param2})
+	</insert>
+	
+	<select id="getWishList" resultType ="com.ici.projectSGSG.dto.ProductDto"> 
+		select * from producttbl where p_id in (select P_ID from WISHLISTTBL where A_ID = #{param1})
+
+	</select>
+	
+	
+	<select id="readWish" resultType="Integer">
+		SELECT W_COUNT FROM WISHLISTTBL WHERE A_ID =  #{param1} AND P_ID = #{param2}
+	</select>
+	
+	<update id="updateWish">
+		UPDATE WISHLISTTBL SET W_COUNT = #{param3}
+						WHERE A_ID= #{param1} and P_ID = #{param2}
+	</update>
+	
+	<delete id="deleteWish">
+		DELETE FROM  WISHLISTTBL WHERE A_ID=#{param1} and P_ID = #{param2}
+	</delete>
+	
+	<delete id="deleteAllWish">
+		DELETE FROM  WISHLISTTBL WHERE A_ID=#{param1}
+	</delete>
+	
+	
+	<insert id="createWish">
+		insert into WISHLISTTBL (A_ID,P_ID,W_COUNT) VALUES (#{param1},#{param2},#{param3})
+	</insert>
+	   
+</mapper>
+	

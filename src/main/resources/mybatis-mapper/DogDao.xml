@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.DogDao">
+	 
+	
+	<select id="getDogsData" resultType="com.ici.projectSGSG.dto.DogDto">
+		SELECT * FROM dogtbl WHERE a_id = #{param1}
+	</select>
+	 
+	
+	
+	<select id="getDogTag" resultType="int">
+      SELECT T_ID
+	  FROM dogbreedstbl
+	  WHERE D_BREEDS = #{param1}
+   </select> 
+   
+   
+	<insert id="DogAddDao">
+		INSERT INTO DOGTBL(D_ID, A_ID, D_BREEDS, D_NAME, D_GENDER, D_AGE, I_ID) values (SGSG_SEQ_DOG.nextval, #{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}) 
+	</insert>
+	
+	<select id="doglistdao" resultType="com.ici.projectSGSG.dto.DogDto">
+		SELECT * FROM DOGTBL WHERE A_ID = #{param1} 
+	</select>
+	
+	<delete id="DogDeleteDao">
+      DELETE FROM  DOGTBL WHERE D_ID = #{param1}
+   	</delete>
+	
+   
+   
+</mapper>
+	

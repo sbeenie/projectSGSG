@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.AccountDao">
+
+	<insert id="accountInsert">
+		INSERT INTO accounttbl VALUES(sgsg_seq_account.nextval,#{param1},#{param2},#{param3},1)
+	</insert>
+	
+	<update id="accountUpdate">
+		UPDATE accounttbl SET a_loginpw = #{param2} , a_name = #{param3} WHERE a_id = #{param1}
+	</update>
+	
+	<delete id="accountDelete">
+		DELETE FROM accounttbl WHERE a_id = #{param1}
+	</delete>
+	
+	<select id="accountQuery" resultType="com.ici.projectSGSG.dto.AccountDto">
+		SELECT A_ID as aId , A_LOGINID as aLoginid, A_LOGINPW as aLoginpw, A_NAME as aName FROM accounttbl WHERE a_id = #{param1}
+	</select>
+	
+	<select id="accountgetInfo" resultType ="com.ici.projectSGSG.dto.AccountPlainDto">
+		SELECT a_id as aId , a_name as aName, a_auth as aauth FROM accounttbl WHERE a_loginid = #{param1}
+	</select>
+	
+	<select id="accountCheckId" resultType="int">
+		SELECT count(*) FROM accounttbl WHERE a_loginid = #{param1}
+	</select>
+	
+	<select id="accountCheckPw" resultType="int">
+		SELECT count(*) FROM accounttbl WHERE a_loginid = #{param1} and a_loginpw = #{param2}
+	</select>
+	
+	<select id="accountList" resultType="com.ici.projectSGSG.dto.AccountDto">
+		SELECT A_ID as aId , A_LOGINID as aLoginid, A_LOGINPW as aLoginpw, A_NAME as aName FROM accounttbl
+	</select>
+	
+</mapper>
+	

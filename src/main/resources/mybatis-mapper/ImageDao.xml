@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.ImageDao">
+	 
+	<!-- 첨부파일 SQL -->
+	<insert id="fileInsert">
+		INSERT INTO imagetbl VALUES(SGSG_SEQ_IMAGE.nextval, #{param1}, #{param2}, #{param3}, #{param4})
+	</insert>
+	
+	<select id="GetImageInfo" resultType="com.ici.projectSGSG.dto.ImageDto">
+		SELECT * FROM imagetbl WHERE i_id = #{param1}
+	</select>
+	 
+	<select id="GetFileId" resultType="int">
+		SELECT i_id FROM imagetbl WHERE I_FILENAME = #{param1}
+	</select>
+	 
+</mapper>
+	

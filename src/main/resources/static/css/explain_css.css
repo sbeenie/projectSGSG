@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+
+.Prolist{
+	margin-left:auto; 
+    margin-right:auto;
+    border: 1px solid #ffcf53; 
+ 	background-color: #ffebb5; 
+}
+
+.table1{
+ 	width: 700px;
+    height: 300px;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    background-image: url("../img/cs1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border:1px solid black;
+}
+
+.Product_des{
+    font-size: 20px;
+    font-family: gulim;
+    resize: none; /* 사용자 임의 변경 불가 */
+	margin-left:auto; 
+    margin-right:auto;
+    border: 1px solid #ffebb5; 
+ 	background-color: #fff7e1; 
+ 	text-align:center;
+	}
+	
+.info{
+	text-align:center;
+ 	height: 110px;
+}
+	
+.info1{
+	text-align:right;
+}
+	
+.proex{
+    font-size: 35px;
+    font-family: gulim;
+ 	text-align:center;
+}
+
+.button{
+	width:120px;
+	height:30px;
+	background-color: #ffebb5;
+	transition-duration:0.28s;
+}
+.button:hover{
+	background-color:lightgreen;
+
+}

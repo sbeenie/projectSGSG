@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.ici.projectSGSG.dao.DogBreedsDao">
+
+	<insert id="DogBreedsDao">		
+		INSERT INTO DOGBREEDSTBL(D_BREEDS, T_ID) VALUES (#{param1}, #{param2})
+	</insert>
+
+	<select id="dblistDao" resultType="com.ici.projectSGSG.dto.DogBreedsDto">
+      SELECT *  FROM dogbreedstbl
+   </select>
+
+</mapper>
